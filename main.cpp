@@ -6,5 +6,7 @@ using namespace std;
 
 int main() {
     setCurrentUserName((char*)"TestMe");
-    cout<<getCurrentUserName();
+    cout<<getCurrentUserName()<<endl;
+    setCurrentLoginUserToken((char*)"xafadsfjas");
+    cout<<getCurrentLoginUserToken()<<endl;
 }

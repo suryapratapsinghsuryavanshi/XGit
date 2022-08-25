@@ -1,11 +1,21 @@
 // Contains all the utility methods related to login.
 
 void setCurrentUserName(char *user_name) {
-    _putenv_s(X_GET_USERNAME_ENV_VAR, user_name);
+    _putenv_s(X_GIT_USERNAME_ENV_VAR, user_name);
 }
 
 char* getCurrentUserName() {
-    char *val = getenv(X_GET_USERNAME_ENV_VAR);
+    char *val = getenv(X_GIT_USERNAME_ENV_VAR);
     CURRENT_LOGIN_USER_NAME = val;
     return CURRENT_LOGIN_USER_NAME;
+}
+
+void setCurrentLoginUserToken(char *token) {
+    _putenv_s(X_GIT_LOGIN_USER_TOKEN, token);
+}
+
+char* getCurrentLoginUserToken() {
+    char *val = getenv(X_GIT_LOGIN_USER_TOKEN);
+    CURRENT_LOGIN_USER_TOKEN = val;
+    return CURRENT_LOGIN_USER_TOKEN;
 }
