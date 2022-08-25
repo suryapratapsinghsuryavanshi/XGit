@@ -1,0 +1,11 @@
+// Contains all the utility methods related to login.
+
+void setCurrentUserName(char *user_name) {
+    _putenv_s(X_GET_USERNAME_ENV_VAR, user_name);
+}
+
+char* getCurrentUserName() {
+    char *val = getenv(X_GET_USERNAME_ENV_VAR);
+    CURRENT_LOGIN_USER_NAME = val;
+    return CURRENT_LOGIN_USER_NAME;
+}
