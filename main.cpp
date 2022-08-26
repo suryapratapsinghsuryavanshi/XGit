@@ -2,11 +2,11 @@
 using namespace std;
 
 // Custom header.
-#include "./headers/login/login.h"
+#include "./src/headers/login.h"
 
 int main() {
     setCurrentUserName((char*)"TestMe");
     cout<<getCurrentUserName()<<endl;
-    setCurrentLoginUserToken((char*)"xafadsfjas");
+    setCurrentLoginUserToken((char*)"afadsfjas");
     cout<<getCurrentLoginUserToken()<<endl;
 }
