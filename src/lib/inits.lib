@@ -1,0 +1,16 @@
+void setAuthorName(char* name) {
+    // a method for set author name, getting from user in first time setup.
+}
+void setAuthorEmail(char* email) {
+    // a method for set author email, getting from user in first time setup.
+}
+void setSystemName(char* sysName) {
+    // a method for set author system name, getting from user in first time setup.
+}
+
+void firstTimeSetup() {
+    // This method call only first time user setup, after install.
+    if(FIRST_TIME_SETUP_DONE) {
+        // after enter this block the FIRST_TIME_SETUP_DONE constant become true.
+    }
+}
