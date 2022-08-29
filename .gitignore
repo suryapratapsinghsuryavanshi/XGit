@@ -12,3 +12,7 @@ _deps
 
 # ignore internal files 
 .vscode
+
+# ignore binary files.
+/xgit
+/xgit.exe
