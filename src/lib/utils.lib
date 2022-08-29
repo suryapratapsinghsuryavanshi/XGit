@@ -28,3 +28,11 @@ char* getUtilData(char* key) {
     fin.close();
     return found >= 1 ? output : NULL;
 }
+
+void deleteUtilConfig() {
+    remove(UTILS_CONFIG_FILE);
+}
+
+void clearScreen() {
+    cout << "\033[2J\033[1;1H";
+}

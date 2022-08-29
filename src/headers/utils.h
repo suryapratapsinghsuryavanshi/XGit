@@ -28,4 +28,14 @@ void setUtilData(char*, char*);
  */
 char* getUtilData(char*);
 
+/**
+ * @brief For delete UtilsConfig file.
+ */
+void deleteUtilConfig();
+
+/**
+ * @brief Clear screen cross-platform.
+ */
+void clearScreen();
+
 #include "../lib/utils.lib"
