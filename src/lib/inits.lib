@@ -1,16 +1,33 @@
 void setAuthorName(char* name) {
-    // a method for set author name, getting from user in first time setup.
-}
-void setAuthorEmail(char* email) {
-    // a method for set author email, getting from user in first time setup.
-}
-void setSystemName(char* sysName) {
-    // a method for set author system name, getting from user in first time setup.
+    setUtilData((char*)"name", name);
 }
 
-void firstTimeSetup() {
-    // This method call only first time user setup, after install.
-    if(FIRST_TIME_SETUP_DONE) {
-        // after enter this block the FIRST_TIME_SETUP_DONE constant become true.
+void setAuthorEmail(char* email) {
+    setUtilData((char*)"email", email);
+}
+
+char* getAuthorName() {
+    return getUtilData((char*)"name");
+}
+
+char* getAuthorEmail() {
+    return getUtilData((char*)"email");
+}
+
+bool firstTimeSetupDone() {
+    // This method call every time to check the configuration are done or not.
+    std::fstream file;
+    file.open(UTILS_CONFIG_FILE, ios::in);
+    if(file.is_open()) {
+        FIRST_TIME_SETUP_DONE = true;
+        file.close();
+    } else {
+        FIRST_TIME_SETUP_DONE = false;
     }
+    if(FIRST_TIME_SETUP_DONE) {
+        // after enter this block the FIRST_TIME_SETUP_DONE constant is true.
+        AUTHOR_NAME = getAuthorName();
+        AUTHOR_EMAIL = getAuthorEmail();
+    }
+    return FIRST_TIME_SETUP_DONE;
 }
