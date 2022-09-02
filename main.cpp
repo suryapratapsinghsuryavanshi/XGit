@@ -23,18 +23,19 @@ int main(int argc, char* argv[]) {
     // Non-CLI usage or simple usage
         while(true) {
             if(!firstTimeSetupDone()) {
-                char temp;
+                string temp;
                 cout<<"We did't find any configuration, plese register yourself! Enter Y/n: ";
-                cin>>temp;
-                if(temp == 'Y') {
+                getline(cin, temp);
+                if(temp == "Y" || temp.empty()) {
                     string name, email;
                     fflush(stdin);
-                    cout<<"Enter your full name: ";getline(cin, name);
+                    cout<<"Enter your full name[unknown]: ";getline(cin, name);
                     fflush(stdin);
-                    cout<<"Enter your email: ";getline(cin, email);
+                    cout<<"Enter your email[unknown]: ";getline(cin, email);
                     setAuthorName((char*)name.c_str());
                     setAuthorEmail((char*)email.c_str());
-                }else if(temp == 'n') {
+                }else if(temp == "n") {
+                    cout<<"Seted Author name and email [unknown].";
                     setAuthorName((char*)AUTHOR_NAME.c_str());
                     setAuthorEmail((char*)AUTHOR_EMAIL.c_str());
                 }else {
@@ -43,10 +44,23 @@ int main(int argc, char* argv[]) {
                 }
             }else {
                 int choice;
+                cout<<"\n1. Add files for staging.\n2. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
                 cout<<"Choose one of the option: ";
                 cin>>choice;
                 if(!cin.fail() && (choice >= 0 && choice <= 9)) {
                     switch(choice) {
+                        case 1:
+                            cout<<getAuthorName()<<endl;
+                            break;
+                        case 2:
+                            cout<<getAuthorEmail()<<endl;
+                            break;
+                        case 3:
+                            cout<<getAuthorEmail()<<endl;
+                            break;
+                        case 4:
+                            cout<<"Bye :)";
+                            exit(0);
                         default:
                             cout<<"Please choose an valid option!"<<choice<<endl;
                     }
