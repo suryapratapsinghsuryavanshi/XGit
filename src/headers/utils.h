@@ -19,14 +19,14 @@
  * @param value value for env vairable value.
  * @return Not return anything.
  */
-void setUtilData(char*, char*);
+void setUtilData(string, string);
 
 /**
  * @brief Get the enviroment variable value.
  * @param key key for retriving env variable value.
  * @return Return corosponding env variable value, else NULL.
  */
-char* getUtilData(char*);
+string getUtilData(string);
 
 /**
  * @brief For delete UtilsConfig file.

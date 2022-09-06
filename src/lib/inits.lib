@@ -1,17 +1,17 @@
-void setAuthorName(char* name) {
-    setUtilData((char*)"name", name);
+void setAuthorName(string name) {
+    setUtilData("name", name);
 }
 
-void setAuthorEmail(char* email) {
-    setUtilData((char*)"email", email);
+void setAuthorEmail(string email) {
+    setUtilData("email", email);
 }
 
-char* getAuthorName() {
-    return getUtilData((char*)"name");
+string getAuthorName() {
+    return getUtilData("name");
 }
 
-char* getAuthorEmail() {
-    return getUtilData((char*)"email");
+string getAuthorEmail() {
+    return getUtilData("email");
 }
 
 bool firstTimeSetupDone() {

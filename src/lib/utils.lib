@@ -1,10 +1,10 @@
-void setUtilData(char* key, char* value) {
+void setUtilData(string key, string value) {
     // Create a file on the root file system and store all the nessory information on it.
     //1. Create a pair of key and value.
-    char* finalValue = (char*) malloc(strlen(key) + strlen(value) + 4);
-    strcpy(finalValue, key);
+    char* finalValue = (char*) malloc(strlen(key.c_str()) + strlen(value.c_str()) + 4);
+    strcpy(finalValue, key.c_str());
     strcat(finalValue, "=");
-    strcat(finalValue, value);
+    strcat(finalValue, value.c_str());
     std::ofstream fout;
     //2. Store the pair of key and value in file.
     fout.open(UTILS_CONFIG_FILE, ios::app);
@@ -12,21 +12,20 @@ void setUtilData(char* key, char* value) {
     fout.close();
 }
 
-char* getUtilData(char* key) {
+string getUtilData(string key) {
     int found = 0;
-    char* output = (char*) new char(50);
+    std::string temp;
     std::ifstream fin;
     fin.open(UTILS_CONFIG_FILE, ios::in);
     for(std::string line; std::getline(fin, line);) {
         if(line.find(key) != std::string::npos) {
-            std::string temp = line.substr(strlen(key) + ESCAPE_SIZE, line.length());
-            strcpy(output, temp.c_str());
+            temp = line.substr(strlen(key.c_str()) + ESCAPE_SIZE, line.length());
             found += 1;
             break;
         }
     }
     fin.close();
-    return found >= 1 ? output : NULL;
+    return found >= 1 ? temp : NULL;
 }
 
 void deleteUtilConfig() {

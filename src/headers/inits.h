@@ -18,23 +18,23 @@ string AUTHOR_EMAIL = "unknown";
  * @brief Set the Author Name, a method for the set the author name, getting from the user in the first time setup.
  * @param name, set value as name key.
  */
-void setAuthorName(char*);
+void setAuthorName(string);
 
 /**
  * @brief Set the Author Email, a method for set author email, getting from the user in first-time setup.
  * @param email, set value as email key.
  */
-void setAuthorEmail(char*);
+void setAuthorEmail(string);
 
 /**
  * @brief Get Author name.
  */
-char* getAuthorName();
+string getAuthorName();
 
 /**
  * @brief Get Author email.
  */
-char* getAuthorEmail();
+string getAuthorEmail();
 
 /**
  * @brief Run every time, to check whether the configuration is done or not.

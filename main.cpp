@@ -32,12 +32,12 @@ int main(int argc, char* argv[]) {
                     cout<<"Enter your full name[unknown]: ";getline(cin, name);
                     fflush(stdin);
                     cout<<"Enter your email[unknown]: ";getline(cin, email);
-                    setAuthorName((char*)name.c_str());
-                    setAuthorEmail((char*)email.c_str());
+                    setAuthorName(name);
+                    setAuthorEmail(email);
                 }else if(temp == "n") {
                     cout<<"Seted Author name and email [unknown].";
-                    setAuthorName((char*)AUTHOR_NAME.c_str());
-                    setAuthorEmail((char*)AUTHOR_EMAIL.c_str());
+                    setAuthorName(AUTHOR_NAME);
+                    setAuthorEmail(AUTHOR_EMAIL);
                 }else {
                     cout<<"Without configuration you not forwared! Exited.";
                     break;
@@ -50,13 +50,13 @@ int main(int argc, char* argv[]) {
                 if(!cin.fail() && (choice >= 0 && choice <= 9)) {
                     switch(choice) {
                         case 1:
-                            cout<<getAuthorName()<<endl;
+                            cout<<AUTHOR_NAME<<endl;
                             break;
                         case 2:
-                            cout<<getAuthorEmail()<<endl;
+                            cout<<AUTHOR_EMAIL<<endl;
                             break;
                         case 3:
-                            cout<<getAuthorEmail()<<endl;
+                            cout<<AUTHOR_EMAIL<<endl;
                             break;
                         case 4:
                             cout<<"Bye :)";
