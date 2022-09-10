@@ -2,9 +2,9 @@
 using namespace std;
 
 // Custom header.
-#include "./src/headers/login.h"
-#include "./src/headers/utils.h"
-#include "./src/headers/inits.h"
+#include "src/headers/login.h"
+#include "src/headers/utils.h"
+#include "src/headers/inits.h"
 
 /**========================================================================
  * *                                Main Program
