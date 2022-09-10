@@ -16,3 +16,9 @@ _deps
 # ignore binary files.
 /xgit
 /xgit.exe
+
+
+# ignore the build
+build
+out
+.vscode
