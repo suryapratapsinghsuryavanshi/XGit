@@ -29,14 +29,19 @@ How to manage files and directories.
 └── xgit # Output file or final software.
 ```
 
-For compile:
+For compile with CMake:
 ```sh
-g++ ./main.cpp -o xgit
+cmake -G "MinGW Makefiles" -S . -B ./build
+```
+
+For build with CMake:
+```sh
+cmake --build .\build\
 ```
 
 For run:
 ```sh
-./xgit
+.\build\xgit
 ```
 
 ## Code Style
