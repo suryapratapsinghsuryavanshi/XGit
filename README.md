@@ -15,18 +15,18 @@
 How to manage files and directories.
 ```sh
 .
-├── LICENSE  
-├── README.md
-├── assets
-│   └── xgit-logo.svg
+├── LICENSE  # License file.
+├── README.md # Documentation file.
+├── assets # Contain all assests files.
+│   └── ___.__
 ├── main.cpp # Main source code file.
-├── makefile
+├── CMakeLists.txt # Contain all cmake related code.
 ├── src
 │   ├── headers # Contain all headers related to the codebase.
-│   │   └── login.h
+│   │   └── ______.h
 │   └── lib # Contains all libs related to the codebase.
-│       └── login.lib
-└── xgit # Output file or final software.
+│       └── ______.lib
+└── build # Output folder contain all binary files for final software.
 ```
 
 For compile with CMake:
