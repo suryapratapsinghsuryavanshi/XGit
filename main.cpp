@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
                 }
             }else {
                 int choice;
-                cout<<"\n1. Add files for staging.\n2. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
+                cout<<"\n1. Initialize a XGit repository.\n2. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
                 cout<<"Choose one of the option: ";
                 cin>>choice;
                 if(!cin.fail() && (choice >= 0 && choice <= 9)) {
