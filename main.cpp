@@ -1,3 +1,9 @@
+#ifdef _WIN32
+    #include<windows.h>
+#else
+    // include those file need to rether then windown.
+#endif
+
 #include <iostream>
 using namespace std;
 
