@@ -1,6 +1,15 @@
 #include <cstring>
 #include <fstream>
 
+// colors defination
+#define RED "red"
+#define GREEN "green"
+#define YELLOW "yellow"
+#define BLUE "blue"
+#define MAGENTA "magenta"
+#define CYAN "cyan"
+#define WHITE "white"
+
 // Containe all the utility method, needed.
 
 // Utils config file path.
@@ -37,5 +46,16 @@ void deleteUtilConfig();
  * @brief Clear screen cross-platform.
  */
 void clearScreen();
+
+/**
+ * @file utils.h
+ * @author Suryapratap Singh Suryavanshi (dev@suryapratap.ml)
+ * @brief A method to print colored text on terminal.
+ * @version 0.1
+ * @date 2022-09-19
+ * 
+ * @copyright Copyright (c) 2022
+ */
+void printColoredText(string, string);
 
 #include "../lib/utils.lib"

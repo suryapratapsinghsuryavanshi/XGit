@@ -35,3 +35,23 @@ void deleteUtilConfig() {
 void clearScreen() {
     cout << "\033[2J\033[1;1H";
 }
+
+void printColoredText(string text, string color) {
+    if(color == "red") {
+        cout<<"\033[1;31m"<<text<<"\033[0m";
+    } else if(color == "green") {
+        cout<<"\033[1;32m"<<text<<"\033[0m";
+    } else if(color == "yellow") {
+        cout<<"\033[1;33m"<<text<<"\033[0m";
+    } else if(color == "blue") {
+        cout<<"\033[1;34m"<<text<<"\033[0m";
+    } else if(color == "magenta") {
+        cout<<"\033[1;35m"<<text<<"\033[0m";
+    } else if(color == "cyan") {
+        cout<<"\033[1;36m"<<text<<"\033[0m";
+    } else if(color == "white") {
+        cout<<"\033[1;37m"<<text<<"\033[0m";
+    } else {
+        cout<<text;
+    }
+}

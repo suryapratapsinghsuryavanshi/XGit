@@ -1,5 +1,5 @@
 ![XGit](./assets/xgit-logo.svg)
-> A Simple git clone, provides flexibility to committers.
+> A Simple git client, provides flexibility to committers.
 
 <b>Technologies:</b> C++, Shell Script, CMake
 

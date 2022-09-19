@@ -11,6 +11,7 @@ using namespace std;
 #include "src/headers/login.h"
 #include "src/headers/utils.h"
 #include "src/headers/inits.h"
+#include "src/headers/x_git_init.h"
 
 /**========================================================================
  * *                                Main Program
@@ -50,13 +51,21 @@ int main(int argc, char* argv[]) {
                 }
             }else {
                 int choice;
-                cout<<"\n1. Initialize a XGit repository.\n2. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
+                if(!isDirExists(x_git_dir) && !x_git_dir_init) {
+                    cout<<"1. Initialize a XGit repository.\n2. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
+                }else {
+                    cout<<"1. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
+                }
                 cout<<"Choose one of the option: ";
                 cin>>choice;
                 if(!cin.fail() && (choice >= 0 && choice <= 9)) {
                     switch(choice) {
                         case 1:
-                            cout<<AUTHOR_NAME<<endl;
+                            if(x_git_init()) {
+                                printColoredText("-> XGit repository initialized successfully.\n", GREEN);
+                            }else {
+                                printColoredText("-> XGit repository already initialized.\n", RED);
+                            }
                             break;
                         case 2:
                             cout<<AUTHOR_EMAIL<<endl;
