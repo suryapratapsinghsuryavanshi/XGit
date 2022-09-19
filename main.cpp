@@ -12,6 +12,9 @@ using namespace std;
 #include "src/headers/utils.h"
 #include "src/headers/inits.h"
 #include "src/headers/x_git_init.h"
+#include "src/headers/stage.h"
+#include "src/headers/status.h"
+#include "src/headers/commit.h"
 
 /**========================================================================
  * *                                Main Program
@@ -52,36 +55,61 @@ int main(int argc, char* argv[]) {
             }else {
                 int choice;
                 if(!isDirExists(x_git_dir) && !x_git_dir_init) {
-                    cout<<"1. Initialize a XGit repository.\n2. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
-                }else {
-                    cout<<"1. Remove files from stage.\n3. Commit staged files.\n4. Exit"<<endl;
-                }
-                cout<<"Choose one of the option: ";
-                cin>>choice;
-                if(!cin.fail() && (choice >= 0 && choice <= 9)) {
-                    switch(choice) {
-                        case 1:
-                            if(x_git_init()) {
-                                printColoredText("-> XGit repository initialized successfully.\n", GREEN);
-                            }else {
-                                printColoredText("-> XGit repository already initialized.\n", RED);
-                            }
-                            break;
-                        case 2:
-                            cout<<AUTHOR_EMAIL<<endl;
-                            break;
-                        case 3:
-                            cout<<AUTHOR_EMAIL<<endl;
-                            break;
-                        case 4:
-                            cout<<"Bye :)";
-                            exit(0);
-                        default:
-                            cout<<"Please choose an valid option!"<<choice<<endl;
+                    cout<<"1. Initialize a XGit repository.\n2. Exit"<<endl;
+                    cout<<"Choose one of the option: ";
+                    cin>>choice;
+                    if(!cin.fail() && (choice >= 0 && choice <= 9)) {
+                        switch(choice) {
+                            case 1:
+                                if(x_git_init()) {
+                                    printColoredText("-> XGit repository initialized successfully.\n", GREEN);
+                                }else {
+                                    printColoredText("-> XGit repository already initialized.\n", RED);
+                                }
+                                break;
+                            case 2:
+                                printColoredText("Bye :)\n", YELLOW);
+                                exit(0);
+                            default:
+                                cout<<"Please choose an valid option!"<<choice<<endl;
+                        }
+                    }else {
+                        printColoredText("Detect unusual activity! Exited.\n", RED);
+                        break;
                     }
                 }else {
-                    cout<<"Detect unusual activity! Exited."<<endl;
-                    break;
+                    cout<<"\n1. Staged changes.\n2. See status of files\n3. Commit staged files.\n4. See commits.\n5. Push changes.\n6. Create Branch.\n7. Switch Branch\n8. Exit"<<endl;
+                    cout<<"Choose one of the option: ";
+                    cin>>choice;
+                    if(!cin.fail() && (choice >= 0 && choice <= 9)) {
+                        switch(choice) {
+                            case 1:
+                                stage();
+                                break;
+                            case 2:
+                                status();
+                                break;
+                            case 3:
+                                commit();
+                                break;
+                            case 4:
+                                break;
+                            case 5:
+                                break;
+                            case 6:
+                                break;
+                            case 7:
+                                break;
+                            case 8:
+                                printColoredText("Bye :)\n", YELLOW);
+                                exit(0);
+                            default:
+                                cout<<"Please choose an valid option!"<<choice<<endl;
+                        }
+                    }else {
+                        printColoredText("Detect unusual activity! Exited.\n", RED);
+                        break;
+                    }
                 }
             }
         }
