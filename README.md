@@ -29,7 +29,7 @@ How to manage files and directories.
 └── build # Output folder contain all binary files for final software.
 ```
 
-For compile with CMake:
+### For compile with CMake:
 ```sh
 cmake -G "MinGW Makefiles" -S . -B ./build
 ```
@@ -43,6 +43,21 @@ For run:
 ```sh
 .\build\xgit
 ```
+
+### For compile with bash:
+```sh
+./setup.sh
+```
+
+### Install the XGit to your system:
+- For Windows:
+    ```sh
+    mv ./build/xgit.exe c:/windows/system32
+    ```
+- For Linux:
+    ```sh
+    sudo mv ./build/xgit /usr/bin
+    ```
 
 ## Code Style
 | Code Implementation | Code Style |
