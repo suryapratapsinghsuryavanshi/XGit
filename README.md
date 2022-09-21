@@ -3,6 +3,12 @@
 
 <b>Technologies:</b> C++, Shell Script, CMake
 
+## What is the need of XGit
+- The Git only have CLI, command directive mode.
+- The Git is not easy to use for beginners.
+- The Git is not easy to use for non-technical people, becouse it use technical terms.
+- The XGit solve all the above problem with the terminal interactive interface.
+
 ## References
 <b>1. Video</b>: [What is git(English)](https://www.youtube.com/watch?v=2sjqTHE0zok&t=716s)<br>
 <b>2. Video</b>: [What is git(Hindi)](https://www.youtube.com/watch?v=QhqVRuRBA9w)<br>
