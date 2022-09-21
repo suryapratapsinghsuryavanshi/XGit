@@ -15,6 +15,12 @@ using namespace std;
 #include "src/headers/stage.h"
 #include "src/headers/status.h"
 #include "src/headers/commit.h"
+#include "src/headers/log.h"
+#include "src/headers/push.h"
+#include "src/headers/pull.h"
+#include "src/headers/branch.h"
+#include "src/headers/see_branch.h"
+#include "src/headers/checkout.h"
 
 /**========================================================================
  * *                                Main Program
@@ -58,7 +64,7 @@ int main(int argc, char* argv[]) {
                     cout<<"1. Initialize a XGit repository.\n2. Exit"<<endl;
                     cout<<"Choose one of the option: ";
                     cin>>choice;
-                    if(!cin.fail() && (choice >= 0 && choice <= 9)) {
+                    if(!cin.fail() && (choice >= 0 && choice <= 2)) {
                         switch(choice) {
                             case 1:
                                 if(x_git_init()) {
@@ -78,10 +84,10 @@ int main(int argc, char* argv[]) {
                         break;
                     }
                 }else {
-                    cout<<"\n1. Staged changes.\n2. See status of files\n3. Commit staged files.\n4. See commits.\n5. Push changes.\n6. Create Branch.\n7. Switch Branch\n8. Exit"<<endl;
+                    cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. Clearn Screen\n11. Exit"<<endl;
                     cout<<"Choose one of the option: ";
                     cin>>choice;
-                    if(!cin.fail() && (choice >= 0 && choice <= 9)) {
+                    if(!cin.fail() && (choice >= 0 && choice <= 11)) {
                         switch(choice) {
                             case 1:
                                 stage();
@@ -91,16 +97,34 @@ int main(int argc, char* argv[]) {
                                 break;
                             case 3:
                                 commit();
+                                printColoredText("-> Commited new changes successfully.\n", GREEN);
                                 break;
                             case 4:
+                                log();
                                 break;
                             case 5:
+                                push();
                                 break;
                             case 6:
+                                pull();
                                 break;
                             case 7:
+                                branch();
+                                printColoredText("-> Branch created successfully.\n", GREEN);
                                 break;
                             case 8:
+                                printColoredText("-> Branches:\n", BLUE);
+                                see_branch();
+                                break;
+                            case 9:
+                                checkout();
+                                printColoredText("-> Switched to new branch successfully.\n", GREEN);
+                                break;
+                            case 10:
+                                clearScreen();
+                                printColoredText("-> Clearned Screen.\n", GREEN);
+                                break;
+                            case 11:
                                 printColoredText("Bye :)\n", YELLOW);
                                 exit(0);
                             default:
