@@ -91,6 +91,7 @@ int main(int argc, char* argv[]) {
                         switch(choice) {
                             case 1:
                                 stage();
+                                printColorfulText("-> Staging successfully.\n", GREEN);
                                 break;
                             case 2:
                                 status();
