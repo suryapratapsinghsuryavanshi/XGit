@@ -58,4 +58,9 @@ void clearScreen();
  */
 void printColoredText(string, string);
 
+/**
+ * @brief Get the All File Data object
+ */
+string getAllFileData(string);
+
 #include "../lib/utils.lib"

@@ -8,7 +8,6 @@
 using namespace std;
 
 // Custom header.
-#include "src/headers/login.h"
 #include "src/headers/utils.h"
 #include "src/headers/inits.h"
 #include "src/headers/x_git_init.h"
@@ -21,6 +20,7 @@ using namespace std;
 #include "src/headers/branch.h"
 #include "src/headers/see_branch.h"
 #include "src/headers/checkout.h"
+#include "src/headers/login.h"
 
 /**========================================================================
  * *                                Main Program
@@ -84,10 +84,10 @@ int main(int argc, char* argv[]) {
                         break;
                     }
                 }else {
-                    cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. Clearn Screen\n11. Exit"<<endl;
+                    cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. GitHub Login\n11. Clearn Screen\n12. Exit"<<endl;
                     cout<<"Choose one of the option: ";
                     cin>>choice;
-                    if(!cin.fail() && (choice >= 0 && choice <= 11)) {
+                    if(!cin.fail() && (choice >= 0 && choice <= 12)) {
                         switch(choice) {
                             case 1:
                                 stage();
@@ -122,10 +122,13 @@ int main(int argc, char* argv[]) {
                                 printColoredText("-> Switched to new branch successfully.\n", GREEN);
                                 break;
                             case 10:
+                                github_login();
+                                break;
+                            case 11:
                                 clearScreen();
                                 printColoredText("-> Clearned Screen.\n", GREEN);
                                 break;
-                            case 11:
+                            case 12:
                                 printColoredText("Bye :)\n", YELLOW);
                                 exit(0);
                             default:

@@ -55,3 +55,14 @@ void printColoredText(string text, string color) {
         cout<<text;
     }
 }
+
+string getAllFileData(string path) {
+    std::ifstream fin;
+    std::string temp = "";
+    fin.open(path, ios::in);
+    for(std::string line; std::getline(fin, line);) {
+        temp += line;
+    }
+    fin.close();
+    return temp;
+}

@@ -14,6 +14,7 @@ void setCurrentUserName(string);
 string getCurrentUserName();
 void setCurrentLoginUserToken(string);
 string getCurrentLoginUserToken();
+void github_login();
 
 // Custom library.
 #include "../lib/login.lib"
