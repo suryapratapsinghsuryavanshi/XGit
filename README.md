@@ -9,6 +9,7 @@
 - The Git is not easy to use for non-technical people, becouse it use technical terms.
 - The XGit solve all the above problem with the terminal interactive interface.
 - Backward compatible, with most of Os.
+- Redefined the complex technical terms with simple one.
 
 ## References
 <b>1. Video</b>: [What is git(English)](https://www.youtube.com/watch?v=2sjqTHE0zok&t=716s)<br>
