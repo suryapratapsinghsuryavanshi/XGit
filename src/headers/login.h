@@ -1,6 +1,7 @@
 #include <string>
 #include <cstring>
 #include <cstdlib>
+#include <stdlib.h>
 
 // Utility CONSTANTS.
 const char* X_GIT_USERNAME_ENV_VAR = "x_git_username";
