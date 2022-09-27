@@ -41,3 +41,12 @@ jobs:
     
     - name: Release
       uses: lukka/run-cmake@v10.0
+      with:
+        cmakeListsOrSettingsJson: CMakeSettings.json
+        cmakeAppendedArgs: -DCMAKE_BUILD_TYPE=Release
+        buildDirectory: ${{github.workspace}}/build
+        buildType: Release
+        publishArtifacts: true
+        publishArtifactsPath: ${{github.workspace}}/build
+        publishArtifactsName: ${{github.workspace}}/build
+        configurePreset: Release
