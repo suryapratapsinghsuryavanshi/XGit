@@ -1,7 +1,11 @@
 // Contains all the utility methods related to login.
 
 void setCurrentUserName(char *user_name) {
-    _putenv_s(X_GIT_USERNAME_ENV_VAR, user_name);
+    try {
+        _putenv_s(X_GIT_USERNAME_ENV_VAR, user_name);
+    }catch(exception e) {
+        cout<<"Error: "<<e.what()<<endl;
+    }
 }
 
 string getCurrentUserName() {
@@ -11,7 +15,11 @@ string getCurrentUserName() {
 }
 
 void setCurrentLoginUserToken(char *token) {
-    _putenv_s(X_GIT_LOGIN_USER_TOKEN, token);
+    try {
+        _putenv_s(X_GIT_LOGIN_USER_TOKEN, token);
+    }catch(exception e) {
+        cout<<"Error: "<<e.what()<<endl;
+    }
 }
 
 string getCurrentLoginUserToken() {
