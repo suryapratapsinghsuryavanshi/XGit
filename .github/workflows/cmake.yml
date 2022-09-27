@@ -41,12 +41,11 @@ jobs:
     
     - name: Release
       uses: lukka/run-cmake@v10.0
-      working-directory: ${{github.workspace}}/build
-      # Create a release
       with:
-        cmakeListsOrSettingsJson: ${{github.workspace}}/CMakeLists.txt
-        buildType: ${{env.BUILD_TYPE}}
-        target: install
+        cmakeListsOrSettingsJson: CMakeLists.txt
+        cmakeAppendedArgs: -DCMAKE_BUILD_TYPE=Release
+        buildDirectory: ${{github.workspace}}/build
+        buildType: Release
         publishArtifacts: true
-        publishArtifactsPath: ${{github.workspace}}/build/install
-        publishArtifactsName: ${{github.workspace}}/build/install
+        publishArtifactsPath: ${{github.workspace}}/build
+        publishArtifactsName: ${{github.workspace}}/build
