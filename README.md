@@ -1,4 +1,4 @@
-![XGit](./assets/xgit-logo.svg)
+![XGit](./assets/xgit-logo.png)
 > A Simple git client, provides flexibility to committers.
 
 <b>Technologies:</b> C++, Shell Script, CMake
