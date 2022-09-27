@@ -51,4 +51,3 @@ jobs:
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
         prerelease: false
-        token: ${{ secrets.GITHUB_TOKEN }}
