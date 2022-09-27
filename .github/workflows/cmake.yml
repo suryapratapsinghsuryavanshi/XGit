@@ -42,7 +42,7 @@ jobs:
     - name: Release
       uses: lukka/run-cmake@v10.0
       with:
-        cmakeListsOrSettingsJson: CMakeLists.txt
+        cmakeListsOrSettingsJson: CMakeSettings.json
         cmakeAppendedArgs: -DCMAKE_BUILD_TYPE=Release
         buildDirectory: ${{github.workspace}}/build
         buildType: Release
