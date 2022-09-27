@@ -14,6 +14,7 @@
 
 // Utils config file path.
 #ifdef _WIN32
+    #include <sysinfoapi.h>
     const char* UTILS_CONFIG_FILE = strcat(getenv("USERPROFILE"), "\\.xgitconfig");
     const int ESCAPE_SIZE = 1;
 #else
