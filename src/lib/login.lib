@@ -1,33 +1,5 @@
 // Contains all the utility methods related to login.
 
-void setCurrentUserName(char *user_name) {
-    try {
-        _putenv_s(X_GIT_USERNAME_ENV_VAR, user_name);
-    }catch(exception e) {
-        cout<<"Error: "<<e.what()<<endl;
-    }
-}
-
-string getCurrentUserName() {
-    char *val = getenv(X_GIT_USERNAME_ENV_VAR);
-    CURRENT_LOGIN_USER_NAME = val;
-    return CURRENT_LOGIN_USER_NAME;
-}
-
-void setCurrentLoginUserToken(char *token) {
-    try {
-        _putenv_s(X_GIT_LOGIN_USER_TOKEN, token);
-    }catch(exception e) {
-        cout<<"Error: "<<e.what()<<endl;
-    }
-}
-
-string getCurrentLoginUserToken() {
-    char *val = getenv(X_GIT_LOGIN_USER_TOKEN);
-    CURRENT_LOGIN_USER_TOKEN = val;
-    return CURRENT_LOGIN_USER_TOKEN;
-}
-
 void github_login() {
     // Create a git ssh public rsa token.
     system(("ssh-keygen -t rsa -b 4096 -C \"" + AUTHOR_EMAIL + "\"").c_str());

@@ -1,7 +1,6 @@
 #include <string>
 #include <cstring>
 #include <cstdlib>
-#include <stdlib.h>
 
 // Utility CONSTANTS.
 const char* X_GIT_USERNAME_ENV_VAR = "x_git_username";
@@ -11,10 +10,6 @@ const char* X_GIT_LOGIN_USER_TOKEN = "x_git_token";
 char* CURRENT_LOGIN_USER_TOKEN;
 
 // Utility method declarations.
-void setCurrentUserName(string);
-string getCurrentUserName();
-void setCurrentLoginUserToken(string);
-string getCurrentLoginUserToken();
 void github_login();
 
 // Custom library.
