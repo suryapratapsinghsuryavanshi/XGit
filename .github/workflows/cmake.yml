@@ -41,7 +41,6 @@ jobs:
     
     - name: Release
       uses: ncipollo/release-action@v1
-      if: startsWith(github.ref, 'refs/tags/v')
       with:
         artifacts: ${{ steps.create_artifact.outputs.path }}
         allowUpdates: true
