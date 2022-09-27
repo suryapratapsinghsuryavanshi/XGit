@@ -20,7 +20,7 @@ using namespace std;
 #include "src/headers/branch.h"
 #include "src/headers/see_branch.h"
 #include "src/headers/checkout.h"
-#include "src/headers/login.h"
+#include "src/headers/github_login.h"
 
 /**========================================================================
  * *                                Main Program
@@ -62,9 +62,9 @@ int main(int argc, char* argv[]) {
                 int choice;
                 if(!isDirExists(x_git_dir) && !x_git_dir_init) {
                     cout<<"1. Initialize a XGit repository.\n2. Exit"<<endl;
-                    cout<<"Choose one of the option: ";
+                    printColoredText("Choose one of the option: ", MAGENTA);
                     cin>>choice;
-                    if(!cin.fail() && (choice >= 0 && choice <= 2)) {
+                    if(!cin.fail() && (choice >= 1 && choice <= 2)) {
                         switch(choice) {
                             case 1:
                                 if(x_git_init()) {
@@ -84,10 +84,10 @@ int main(int argc, char* argv[]) {
                         break;
                     }
                 }else {
-                    cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. GitHub Login\n11. Clearn Screen\n12. Exit"<<endl;
-                    cout<<"Choose one of the option: ";
+                    cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. GitHub\n11. Clearn Screen\n12. Exit"<<endl;
+                    printColoredText("Choose one of the option: ", MAGENTA);
                     cin>>choice;
-                    if(!cin.fail() && (choice >= 0 && choice <= 12)) {
+                    if(!cin.fail() && (choice >= 1 && choice <= 12)) {
                         switch(choice) {
                             case 1:
                                 stage();
@@ -122,7 +122,7 @@ int main(int argc, char* argv[]) {
                                 printColoredText("-> Switched to new branch successfully.\n", GREEN);
                                 break;
                             case 10:
-                                github_login();
+                                githubLogin();
                                 break;
                             case 11:
                                 clearScreen();
