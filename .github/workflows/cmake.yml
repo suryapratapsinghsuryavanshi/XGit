@@ -40,6 +40,13 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
     
     - name: Release
+      uses: lukka/run-cmake@v10.0
       working-directory: ${{github.workspace}}/build
       # Create a release
-      run: cpack -C ${{env.BUILD_TYPE}}
+      with:
+        cmakeListsOrSettingsJson: ${{github.workspace}}/CMakeLists.txt
+        buildType: ${{env.BUILD_TYPE}}
+        target: install
+        publishArtifacts: true
+        publishArtifactsPath: ${{github.workspace}}/build/install
+        publishArtifactsName: ${{github.workspace}}/build/install
