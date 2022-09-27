@@ -11,6 +11,13 @@
 - Backward compatible, with most of Os.
 - Redefined the complex technical terms with simple one.
 
+## Essential components requirements and tools
+- C++: The XGit is written in C++.
+- Shell Script: The XGit is using shell script for some of the tasks not possible with C++. [BOOK](https://www.amazon.com/Learn-Shell-Script-Suryapratap-Suryavanshi-ebook/dp/B09V2ZG7FK/ref=sr_1_1?crid=1V906P2U0GURO&keywords=learn+shell+script&qid=1664270508&qu=eyJxc2MiOiIyLjA2IiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=learn+shell+scri%2Caps%2C753&sr=8-1)
+- CMake: The XGit is using CMake for building the project. [LINK](https://github.com/Kitware/CMake/releases/download/v3.24.2/cmake-3.24.2-windows-x86_64.msi)
+- Git: The XGit is use base layer Git for version controling. [LINK](https://git-scm.com/downloads)
+- GCC MinGW-64: The XGit is using GCC MinGW-64 for compiling the C++ code. [LINK](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe)
+
 ## References
 <b>1. Video</b>: [What is git(English)](https://www.youtube.com/watch?v=2sjqTHE0zok&t=716s)<br>
 <b>2. Video</b>: [What is git(Hindi)](https://www.youtube.com/watch?v=QhqVRuRBA9w)<br>
