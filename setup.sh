@@ -17,17 +17,22 @@ cmake --build ./build/ --config Release
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
     cp ./build/xgit ./release/xgit
+    cp ./release/xgit /usr/bin
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     cp ./build/xgit ./release/xgit
+    cp ./release/xgit /usr/bin
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     # POSIX compatibility layer and Linux environment emulation for Windows
     cp ./build/xgit.exe ./release/xgit.exe
+    cp ./release/xgit.exe c:/windows/system32
 elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
     cp ./build/xgit.exe ./release/xgit.exe
+    cp ./release/xgit.exe c:/windows/system32
 elif [[ "$OSTYPE" == "win32" ]]; then
     cp ./build/xgit.exe ./release/xgit.exe
+    cp ./release/xgit.exe c:/windows/system32
 fi
 
 # print success message to console and wait for enter press.
