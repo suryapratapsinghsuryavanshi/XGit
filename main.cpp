@@ -62,10 +62,10 @@ int main(int argc, char* argv[]) {
                 }else {
                     int choice;
                     if(!isDirExists(x_git_dir) && !x_git_dir_init) {
-                        cout<<"1. Initialize a XGit repository.\n2. Exit"<<endl;
+                        cout<<"1. Initialize a XGit repository.\n2. GitHub\n3. Exit"<<endl;
                         printColoredText("Choose one of the option: ", MAGENTA);
                         cin>>choice;
-                        if(!cin.fail() && (choice >= 1 && choice <= 2)) {
+                        if(!cin.fail() && (choice >= 1 && choice <= 3)) {
                             switch(choice) {
                                 case 1:
                                     if(x_git_init()) {
@@ -75,6 +75,9 @@ int main(int argc, char* argv[]) {
                                     }
                                     break;
                                 case 2:
+                                    githubLogin();
+                                    break;
+                                case 3:
                                     printColoredText("Bye :)\n", YELLOW);
                                     exit(0);
                                 default:
