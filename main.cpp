@@ -30,117 +30,121 @@ using namespace std;
  *========================================================================**/
 
 int main(int argc, char* argv[]) {
-    // logic for, decide CLI usage or basic usage.
-    CLI_USAGE = argc == 1;
-    if(!CLI_USAGE) {
-    // Event-Driven approach for CLI-based application.
+    try {
+        // logic for, decide CLI usage or basic usage.
+        CLI_USAGE = argc == 1;
+        if(!CLI_USAGE) {
+        // Event-Driven approach for CLI-based application.
 
-    }else {
-    // Non-CLI usage or simple usage
-        while(true) {
-            if(!firstTimeSetupDone()) {
-                string temp;
-                cout<<"We did't find any configuration, plese register yourself! Enter Y/n: ";
-                getline(cin, temp);
-                if(temp == "Y" || temp.empty()) {
-                    string name, email;
-                    fflush(stdin);
-                    cout<<"Enter your full name[unknown]: ";getline(cin, name);
-                    fflush(stdin);
-                    cout<<"Enter your email[unknown]: ";getline(cin, email);
-                    setAuthorName(name);
-                    setAuthorEmail(email);
-                }else if(temp == "n") {
-                    cout<<"Seted Author name and email [unknown].";
-                    setAuthorName(AUTHOR_NAME);
-                    setAuthorEmail(AUTHOR_EMAIL);
-                }else {
-                    cout<<"Without configuration you not forwared! Exited.";
-                    break;
-                }
-            }else {
-                int choice;
-                if(!isDirExists(x_git_dir) && !x_git_dir_init) {
-                    cout<<"1. Initialize a XGit repository.\n2. Exit"<<endl;
-                    printColoredText("Choose one of the option: ", MAGENTA);
-                    cin>>choice;
-                    if(!cin.fail() && (choice >= 1 && choice <= 2)) {
-                        switch(choice) {
-                            case 1:
-                                if(x_git_init()) {
-                                    printColoredText("-> XGit repository initialized successfully.\n", GREEN);
-                                }else {
-                                    printColoredText("-> XGit repository already initialized.\n", RED);
-                                }
-                                break;
-                            case 2:
-                                printColoredText("Bye :)\n", YELLOW);
-                                exit(0);
-                            default:
-                                cout<<"Please choose an valid option!"<<choice<<endl;
-                        }
+        }else {
+        // Non-CLI usage or simple usage
+            while(true) {
+                if(!firstTimeSetupDone()) {
+                    string temp;
+                    cout<<"We did't find any configuration, plese register yourself! Enter Y/n: ";
+                    getline(cin, temp);
+                    if(temp == "Y" || temp.empty()) {
+                        string name, email;
+                        fflush(stdin);
+                        cout<<"Enter your full name[unknown]: ";getline(cin, name);
+                        fflush(stdin);
+                        cout<<"Enter your email[unknown]: ";getline(cin, email);
+                        setAuthorName(name);
+                        setAuthorEmail(email);
+                    }else if(temp == "n") {
+                        cout<<"Seted Author name and email [unknown].";
+                        setAuthorName(AUTHOR_NAME);
+                        setAuthorEmail(AUTHOR_EMAIL);
                     }else {
-                        printColoredText("Detect unusual activity! Exited.\n", RED);
+                        cout<<"Without configuration you not forwared! Exited.";
                         break;
                     }
                 }else {
-                    cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. GitHub\n11. Clearn Screen\n12. Exit"<<endl;
-                    printColoredText("Choose one of the option: ", MAGENTA);
-                    cin>>choice;
-                    if(!cin.fail() && (choice >= 1 && choice <= 12)) {
-                        switch(choice) {
-                            case 1:
-                                stage();
-                                printColoredText("-> Staging successfully.\n", GREEN);
-                                break;
-                            case 2:
-                                status();
-                                break;
-                            case 3:
-                                commit();
-                                printColoredText("-> Commited new changes successfully.\n", GREEN);
-                                break;
-                            case 4:
-                                log();
-                                break;
-                            case 5:
-                                push();
-                                break;
-                            case 6:
-                                pull();
-                                break;
-                            case 7:
-                                branch();
-                                printColoredText("-> Branch created successfully.\n", GREEN);
-                                break;
-                            case 8:
-                                printColoredText("-> Branches:\n", BLUE);
-                                see_branch();
-                                break;
-                            case 9:
-                                checkout();
-                                printColoredText("-> Switched to new branch successfully.\n", GREEN);
-                                break;
-                            case 10:
-                                githubLogin();
-                                break;
-                            case 11:
-                                clearScreen();
-                                printColoredText("-> Clearned Screen.\n", GREEN);
-                                break;
-                            case 12:
-                                printColoredText("Bye :)\n", YELLOW);
-                                exit(0);
-                            default:
-                                cout<<"Please choose an valid option!"<<choice<<endl;
+                    int choice;
+                    if(!isDirExists(x_git_dir) && !x_git_dir_init) {
+                        cout<<"1. Initialize a XGit repository.\n2. Exit"<<endl;
+                        printColoredText("Choose one of the option: ", MAGENTA);
+                        cin>>choice;
+                        if(!cin.fail() && (choice >= 1 && choice <= 2)) {
+                            switch(choice) {
+                                case 1:
+                                    if(x_git_init()) {
+                                        printColoredText("-> XGit repository initialized successfully.\n", GREEN);
+                                    }else {
+                                        printColoredText("-> XGit repository already initialized.\n", RED);
+                                    }
+                                    break;
+                                case 2:
+                                    printColoredText("Bye :)\n", YELLOW);
+                                    exit(0);
+                                default:
+                                    cout<<"Please choose an valid option!"<<choice<<endl;
+                            }
+                        }else {
+                            printColoredText("Detect unusual activity! Exited.\n", RED);
+                            break;
                         }
                     }else {
-                        printColoredText("Detect unusual activity! Exited.\n", RED);
-                        break;
+                        cout<<"\n1. Staged changes\n2. See status of files\n3. Commit staged files\n4. See commits log\n5. Push changes\n6. Pull changes\n7. Create Branch\n8. See Branch\n9. Switch Branch\n10. GitHub\n11. Clearn Screen\n12. Exit"<<endl;
+                        printColoredText("Choose one of the option: ", MAGENTA);
+                        cin>>choice;
+                        if(!cin.fail() && (choice >= 1 && choice <= 12)) {
+                            switch(choice) {
+                                case 1:
+                                    stage();
+                                    printColoredText("-> Staging successfully.\n", GREEN);
+                                    break;
+                                case 2:
+                                    status();
+                                    break;
+                                case 3:
+                                    commit();
+                                    printColoredText("-> Commited new changes successfully.\n", GREEN);
+                                    break;
+                                case 4:
+                                    log();
+                                    break;
+                                case 5:
+                                    push();
+                                    break;
+                                case 6:
+                                    pull();
+                                    break;
+                                case 7:
+                                    branch();
+                                    printColoredText("-> Branch created successfully.\n", GREEN);
+                                    break;
+                                case 8:
+                                    printColoredText("-> Branches:\n", BLUE);
+                                    see_branch();
+                                    break;
+                                case 9:
+                                    checkout();
+                                    printColoredText("-> Switched to new branch successfully.\n", GREEN);
+                                    break;
+                                case 10:
+                                    githubLogin();
+                                    break;
+                                case 11:
+                                    clearScreen();
+                                    printColoredText("-> Clearned Screen.\n", GREEN);
+                                    break;
+                                case 12:
+                                    printColoredText("Bye :)\n", YELLOW);
+                                    exit(0);
+                                default:
+                                    cout<<"Please choose an valid option!"<<choice<<endl;
+                            }
+                        }else {
+                            printColoredText("Detect unusual activity! Exited.\n", RED);
+                            break;
+                        }
                     }
                 }
             }
         }
+    }catch(exception& e) {
+        printColoredText("Error: " + string(e.what()), RED);
     }
     return 0;
 }
