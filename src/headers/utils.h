@@ -1,6 +1,8 @@
 #include <cstring>
 #include <fstream>
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 using namespace std;
 
 // colors defination

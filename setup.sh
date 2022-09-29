@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# for fixing script run issue
+sed -i -e 's/\r$//' setup.sh
+
 # remove old build directory
 rm -rf build
 
@@ -18,19 +21,23 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
     cp ./build/xgit ./release/xgit
     cp ./release/xgit /usr/bin
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
     cp ./build/xgit ./release/xgit
     cp ./release/xgit /usr/bin
-elif [[ "$OSTYPE" == "cygwin" ]]; then
+fi
+if [[ "$OSTYPE" == "cygwin" ]]; then
     # POSIX compatibility layer and Linux environment emulation for Windows
     cp ./build/xgit.exe ./release/xgit.exe
     cp ./release/xgit.exe c:/windows/system32
-elif [[ "$OSTYPE" == "msys" ]]; then
+fi
+if [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
     cp ./build/xgit.exe ./release/xgit.exe
     cp ./release/xgit.exe c:/windows/system32
-elif [[ "$OSTYPE" == "win32" ]]; then
+fi
+if [[ "$OSTYPE" == "win32" ]]; then
     cp ./build/xgit.exe ./release/xgit.exe
     cp ./release/xgit.exe c:/windows/system32
 fi
