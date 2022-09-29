@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
-using namespace std;
 
 // colors defination
 #define RED "red"

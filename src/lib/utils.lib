@@ -1,3 +1,5 @@
+using namespace std;
+
 void setUtilData(string key, string value) {
     // Create a file on the root file system and store all the nessory information on it.
     //1. Create a pair of key and value.
