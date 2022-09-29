@@ -24,7 +24,7 @@ using namespace std;
     const int ESCAPE_SIZE = 1;
 #else
     const char* UTILS_CONFIG_FILE = "/usr/bin/.xgitconfig";
-    const int ESCAPE_SIZE = 2;
+    const int ESCAPE_SIZE = 1;
 #endif
 
 /**
