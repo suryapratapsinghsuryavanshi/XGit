@@ -1,7 +1,7 @@
 ![XGit](./assets/xgit-logo.png)
 > A Simple git client, provides flexibility to committers.
 
-<b>Technologies:</b> C++, Shell Script, CMake
+<span style="color: purple;"><b>Technologies:</b> C++, Shell Script, CMake</span>
 
 ## What is the need of XGit
 - The Git only have CLI, command directive mode.
@@ -42,6 +42,17 @@ How to manage files and directories.
 │   └── lib # Contains all libs related to the codebase.
 │       └── ______.lib
 └── build # Output folder contain all binary files for final software.
+```
+
+### Download Release:
+- [Windows](./release/xgit.exe)
+- [Linux](./release/xgit)
+- [MacOs](./release/xgit)
+
+### Compilation and Installation <span style="color: green;">[CROSS PLATFORM]</span>:
+```sh
+# Run this script to compile and install the software in any platform.
+./setup.sh
 ```
 
 ### For compile with CMake:
