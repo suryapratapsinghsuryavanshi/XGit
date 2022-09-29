@@ -27,6 +27,7 @@ using namespace std;
  *  All methods and functionality are in one place in this file. Some users 
  *  are familiar with CLI and some are not, so we also care about these types 
  *  of users also use our tool without any inconvenience.
+ *  version: 1.0.0
  *========================================================================**/
 
 int main(int argc, char* argv[]) {
