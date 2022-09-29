@@ -1,3 +1,5 @@
+#include <iostream>
+
 /**==============================================
  * *                   INIT
  *   This file contains all the initial codebase 

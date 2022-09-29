@@ -1,3 +1,5 @@
+#include <iostream>
+
 /**
  * @brief Log all commits.
  * @return void
