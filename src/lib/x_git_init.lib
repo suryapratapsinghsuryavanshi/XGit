@@ -26,7 +26,7 @@ bool x_git_init() {
     if(!isDirExists(x_git_dir)) {
         x_git_dir_init = true;
         // create .git directory if not exists
-        popen("git init", "r");
+        system("git init");
         makeFile("./.gitignore");
         return true;
     }
