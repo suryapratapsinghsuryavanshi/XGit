@@ -17,7 +17,7 @@ string getUtilData(string key) {
     std::string temp;
     std::ifstream fin;
     fin.open(UTILS_CONFIG_FILE, ios::in);
-    for(std::string line; std::getline(fin, line);) {
+    for(std::string line; getline(fin, line);) {
         if(line.find(key) != std::string::npos) {
             temp = line.substr(strlen(key.c_str()) + ESCAPE_SIZE, line.length());
             found += 1;
@@ -60,7 +60,7 @@ string getAllFileData(string path) {
     std::ifstream fin;
     std::string temp = "";
     fin.open(path, ios::in);
-    for(std::string line; std::getline(fin, line);) {
+    for(std::string line; getline(fin, line);) {
         temp += line;
     }
     fin.close();
