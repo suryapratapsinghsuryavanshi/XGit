@@ -75,7 +75,7 @@ For run:
 ./setup.sh
 ```
 
-### Install the XGit to your system:
+### How to Install the XGit to your system:
 - For Windows:
     ```sh
     mv ./build/xgit.exe c:/windows/system32
